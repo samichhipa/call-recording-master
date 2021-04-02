@@ -1,21 +1,28 @@
 package com.github.tntkhang.callrecorder;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.github.tntkhang.utils.Constants;
 
+import vn.nextlogix.tntkhang.R;
+
 public class CallRecorderService extends Service {
 
     MediaRecorder recorder;
     static final String TAGS = "tntkhang";
-
+    private static final String CHANNEL_ID_MAIN = "my_channel_017";
     private boolean isStartRecordSuccess = true;
     @Nullable
     @Override
@@ -23,7 +30,26 @@ public class CallRecorderService extends Service {
         return null;
     }
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
+
     public int onStartCommand(Intent intent, int flags, int startId) {
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID_MAIN, "Recording...", NotificationManager.IMPORTANCE_LOW);
+            channel.setSound(null, null);
+            channel.setShowBadge(false);
+            ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).createNotificationChannel(channel);
+        }
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID_MAIN)
+                .setSmallIcon(R.mipmap.ic_launcher_round)
+                .setContentTitle(getString(R.string.app_name))
+                .setContentText("Recording...")
+                .setSound(null)
+                .build();
+        startForeground(6, notification);
         recorder = new MediaRecorder();
         recorder.reset();
 
@@ -39,7 +65,7 @@ public class CallRecorderService extends Service {
 //                recorder.setAudioSource(MediaRecorder.AudioSource.VOICE_COMMUNICATION);
 //            }
 
-        recorder.setAudioSamplingRate(44100);
+        recorder.setAudioSamplingRate(48000);
         recorder.setAudioEncodingBitRate(96000);
 
 

@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.tntkhang:gmail-sender-library:1.2.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/gmail-sender-library-1.2.0.aar/c0bbca20c7595251b2abe3aece58eab2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/gmail-sender-library-1.2.0.aar/c0bbca20c7595251b2abe3aece58eab2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/gmail-sender-library-1.2.0.aar/c0bbca20c7595251b2abe3aece58eab2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/gmail-sender-library-1.2.0.aar/c0bbca20c7595251b2abe3aece58eab2/jars/libs/activation.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/gmail-sender-library-1.2.0.aar/c0bbca20c7595251b2abe3aece58eab2/jars/libs/additionnal.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/gmail-sender-library-1.2.0.aar/c0bbca20c7595251b2abe3aece58eab2/jars/libs/mail.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.tntkhang/gmail-sender-library/1.2.0/baf4e77501ef699e2cad229552782150273d24e5/gmail-sender-library-1.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
